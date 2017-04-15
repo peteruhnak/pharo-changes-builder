@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "PeterUhnak 4/16/2017 00:30",
+	"super" : "BaselineOf",
+	"category" : "BaselineOfChangesBuilder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfChangesBuilder",
+	"type" : "normal"
+}
