@@ -1,0 +1,15 @@
+SmalltalkCISpec {
+	#loading : [
+		SCIMetacelloLoadSpec {
+			#baseline : 'ChangesBuilder',
+			#directory : 'repository',
+			#platforms : [ #pharo ]
+		}
+	],
+	#testing : {
+		#packages : [ 'ChangesBuilder' ],
+		#coverage : {
+			#packages : [ 'ChangesBuilder' ]
+		}
+	}
+}
