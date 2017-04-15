@@ -55,6 +55,12 @@ CBMethod >> getter: aVariableName delegateFrom: aString [
 	^ <2s> <1s>' expandMacrosWith: aVariableName with: aString)
 ]
 
+{ #category : #initialization }
+CBMethod >> initialize [
+	super initialize.
+	protocol := 'as yet unclassified'
+]
+
 { #category : #accessing }
 CBMethod >> protocol [
 	^ protocol
