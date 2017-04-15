@@ -124,9 +124,9 @@ CBClassTest >> testPackage [
 { #category : #'tests - accessing' }
 CBClassTest >> testParent [
 	class := CBClass new.
-	self assert: class parent equals: nil.
-	class parent: 'Object'.
-	self assert: class parent equals: 'Object'
+	self assert: class parent equals: 'Object'.
+	class parent: 'TestCase'.
+	self assert: class parent equals: 'TestCase'
 ]
 
 { #category : #'tests - accessing' }
