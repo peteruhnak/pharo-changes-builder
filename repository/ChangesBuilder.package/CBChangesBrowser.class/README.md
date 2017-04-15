@@ -1,0 +1,1 @@
+I override ChangesBrowser>>accept to provide a progress bar.

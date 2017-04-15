@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "PeterUhnak 4/12/2017 11:02",
+	"super" : "Object",
+	"category" : "ChangesBuilder-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"source",
+		"protocol"
+	],
+	"name" : "CBMethod",
+	"type" : "normal"
+}

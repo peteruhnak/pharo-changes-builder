@@ -1,0 +1,3 @@
+*ChangesBuilder
+textToDisplay
+	^ self comment

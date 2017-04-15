@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "PeterUhnak 4/12/2017 11:02",
+	"super" : "Object",
+	"category" : "ChangesBuilder-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"name",
+		"comment",
+		"parent",
+		"package",
+		"instanceVariables",
+		"methods",
+		"metaMethods"
+	],
+	"name" : "CBClass",
+	"type" : "normal"
+}
