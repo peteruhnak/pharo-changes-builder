@@ -32,6 +32,13 @@ CBNautilusRefactoringChangesTest >> testClassNotChanged [
 ]
 
 { #category : #tests }
+CBNautilusRefactoringChangesTest >> testExample [
+	| window |
+	window := CBChangeSet example.
+	window delete.
+]
+
+{ #category : #tests }
 CBNautilusRefactoringChangesTest >> testMethodChanged [
 	| cls change |
 	cls := CBClass new name: self class name.
