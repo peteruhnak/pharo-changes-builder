@@ -7,6 +7,13 @@ Class {
 	#category : 'ChangesBuilder-Tests'
 }
 
+{ #category : #asserting }
+CBMethodTest >> assertMethod: actualCode equals: expectedCode [
+	self
+		assert: (RBParser parseMethod: actualCode) formattedCode
+		equals: (RBParser parseMethod: expectedCode) formattedCode
+]
+
 { #category : #tests }
 CBMethodTest >> testAsArgumentName [
 	method := CBMethod basicNew.
@@ -25,7 +32,7 @@ CBMethodTest >> testAsComment [
 CBMethodTest >> testGetter [
 	method := CBMethod new getter: 'var'.
 	self
-		assert: method source
+		assertMethod: method source
 		equals:
 			'var
 	^ var'.
@@ -36,11 +43,34 @@ CBMethodTest >> testGetter [
 CBMethodTest >> testGetterWithComment [
 	method := CBMethod new getter: 'var' comment: 'comment'.
 	self
-		assert: method source
+		assertMethod: method source
 		equals:
 			'var
 	"comment"
 	^ var'.
+	self assert: method protocol equals: 'accessing'
+]
+
+{ #category : #tests }
+CBMethodTest >> testGetterWithCommentDefaultValue [
+	method := CBMethod new getter: 'var' comment: 'comment' defaultValue: '12'.
+	self
+		assertMethod: method source
+		equals:
+			'var
+	"comment"
+	^ var ifNil: [ var := 12 ]'.
+	self assert: method protocol equals: 'accessing'
+]
+
+{ #category : #tests }
+CBMethodTest >> testGetterWithDefaultValue [
+	method := CBMethod new getter: 'var' defaultValue: '12'.
+	self
+		assertMethod: method source
+		equals:
+			'var
+	^ var ifNil: [ var := 12 ]'.
 	self assert: method protocol equals: 'accessing'
 ]
 
@@ -54,7 +84,7 @@ CBMethodTest >> testSelector [
 CBMethodTest >> testSetter [
 	method := CBMethod new setter: 'var' argument: 'variable'.
 	self
-		assert: method source
+		assertMethod: method source
 		equals:
 			'var: aVariable
 	var := aVariable'.
@@ -65,7 +95,7 @@ CBMethodTest >> testSetter [
 CBMethodTest >> testSetterWithComment [
 	method := CBMethod new setter: 'var' argument: 'variable' comment: 'hello'.
 	self
-		assert: method source
+		assertMethod: method source
 		equals:
 			'var: aVariable
 	"hello"

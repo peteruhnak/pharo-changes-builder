@@ -115,6 +115,11 @@ CBClass >> metaMethods [
 ]
 
 { #category : #accessing }
+CBClass >> methodNamed: aName [
+	^ self methods detect: [ :each | each selector = aName ]
+]
+
+{ #category : #accessing }
 CBClass >> methods [
 	^ methods values
 ]
