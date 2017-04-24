@@ -2,7 +2,7 @@ tests
 testGetter
 	method := CBMethod new getter: 'var'.
 	self
-		assert: method source
+		assertMethod: method source
 		equals:
 			'var
 	^ var'.

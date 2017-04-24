@@ -1,14 +1,15 @@
 {
-	"commentStamp" : "",
-	"super" : "TestCase",
 	"category" : "ChangesBuilder-Tests",
-	"classinstvars" : [ ],
-	"pools" : [ ],
-	"classvars" : [ ],
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
 	"instvars" : [
 		"result",
-		"class"
-	],
+		"class" ],
 	"name" : "CBClassTest",
-	"type" : "normal"
-}
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

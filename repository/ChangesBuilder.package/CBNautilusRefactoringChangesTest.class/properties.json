@@ -1,11 +1,14 @@
 {
-	"commentStamp" : "",
-	"super" : "TestCase",
 	"category" : "ChangesBuilder-Tests",
-	"classinstvars" : [ ],
-	"pools" : [ ],
-	"classvars" : [ ],
-	"instvars" : [ ],
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
 	"name" : "CBNautilusRefactoringChangesTest",
-	"type" : "normal"
-}
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

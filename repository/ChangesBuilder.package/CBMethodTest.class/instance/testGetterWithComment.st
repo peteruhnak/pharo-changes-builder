@@ -2,7 +2,7 @@ tests
 testGetterWithComment
 	method := CBMethod new getter: 'var' comment: 'comment'.
 	self
-		assert: method source
+		assertMethod: method source
 		equals:
 			'var
 	"comment"

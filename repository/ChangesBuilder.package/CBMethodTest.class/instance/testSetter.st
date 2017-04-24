@@ -2,7 +2,7 @@ tests
 testSetter
 	method := CBMethod new setter: 'var' argument: 'variable'.
 	self
-		assert: method source
+		assertMethod: method source
 		equals:
 			'var: aVariable
 	var := aVariable'.
