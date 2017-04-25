@@ -8,7 +8,7 @@ accept
 				do: [ :change | 
 					RBRefactoryChangeManager instance performChange: change.
 					job increment ] ] asJob
-				title: 'Generating code';
+				title: 'Applying changes';
 				min: 0;
 				max: self pickedChanges size;
 				run ].
