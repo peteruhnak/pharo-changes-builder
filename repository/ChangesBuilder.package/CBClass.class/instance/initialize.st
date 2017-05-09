@@ -4,5 +4,6 @@ initialize
 	parent := 'Object'.
 	package := 'Unclassified'.
 	instanceVariables := Set new.
+	classVariables := Set new.
 	methods := OrderedDictionary new.
 	metaMethods := OrderedDictionary new

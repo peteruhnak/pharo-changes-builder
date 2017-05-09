@@ -5,8 +5,10 @@ classDefinition
 	self assert: [ instanceVariables isCollection ].
 	self assert: [ instanceVariables allSatisfy: #isString ].
 	self assert: [ package isString & package isNotEmpty ].
-	^ '<1s> subclass: #<2s><n><t>instanceVariableNames: <3p><n><t>classVariableNames: ''''<n><t>poolDictionaries: ''''<n><t>category: <4p>'
-		expandMacrosWith: parent
-		with: name
-		with: (self instanceVariables joinUsing: ' ')
-		with: package
+	^ '<1s> subclass: #<2s><n><t>instanceVariableNames: <3p><n><t>classVariableNames: <4p><n><t>poolDictionaries: ''''<n><t>category: <5p>'
+		expandMacrosWithArguments:
+			{parent.
+			name.
+			self instanceVariables joinUsing: ' '.
+			self classVariables joinUsing: ' '.
+			package}
