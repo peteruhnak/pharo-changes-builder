@@ -18,6 +18,7 @@ CBClassTest >> setUp [
 CBClassTest >> testAddClassVariable [
 	class addClassVarNamed: 'something'.
 	self assert: class classVariables equals: #(something).
+	self assert: class classVarNames equals: #(something).
 	self assert: (class hasClassVarNamed: 'something')
 ]
 
@@ -25,6 +26,7 @@ CBClassTest >> testAddClassVariable [
 CBClassTest >> testAddInstanceVariable [
 	class addInstVarNamed: 'something'.
 	self assert: class instanceVariables equals: #(something).
+	self assert: class instVarNames equals: #(something).
 	self assert: (class hasInstVarNamed: 'something')
 ]
 
@@ -45,10 +47,13 @@ CBClassTest >> testAddMetaMethod [
 
 { #category : #'tests - adding' }
 CBClassTest >> testAddMethod [
-	class addMethod: (CBMethod new getter: 'item').
+	| method |
+	method := CBMethod new getter: 'item'.
+	class addMethod: method.
 	self assert: class metaMethods size equals: 0.
 	self assert: class methods size equals: 1.
-	self assert: class selectors equals: #(item)
+	self assert: class selectors equals: #(item).
+	self assert: (class methodNamed: #item) equals: method
 ]
 
 { #category : #tests }
