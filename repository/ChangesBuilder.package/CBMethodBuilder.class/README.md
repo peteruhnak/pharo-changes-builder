@@ -1,0 +1,3 @@
+A utility class for building code piece by piece.
+
+Note that this was first attempt and I do not like this class, so don't get too attached to it...
