@@ -1,11 +1,38 @@
 Class {
 	#name : #CBNautilusRefactoringChangesTest,
 	#superclass : #TestCase,
+	#classInstVars : [
+		'metaVar1'
+	],
 	#category : 'ChangesBuilder-Tests'
 }
 
 { #category : #support }
 CBNautilusRefactoringChangesTest >> methodForTest [
+]
+
+{ #category : #tests }
+CBNautilusRefactoringChangesTest >> testAddMetaVarChanged [
+	| cls change |
+	cls := CBClass new
+		name: #CBNautilusRefactoringChangesTest;
+		parent: #TestCase.
+	cls addMetaInstVarNamed: 'var1'.
+	change := (CBChangeSet new addClass: cls) allRefactoringChanges last.
+	self deny: change textToDisplay = change oldVersionTextToDisplay.
+	self assert: (CBChangeSet new addClass: cls) refactoringChanges isNotEmpty
+]
+
+{ #category : #tests }
+CBNautilusRefactoringChangesTest >> testAddMetaVarNotChanged [
+	| cls change |
+	cls := CBClass new
+		name: #CBNautilusRefactoringChangesTest;
+		parent: #TestCase.
+	cls addMetaInstVarNamed: 'metaVar1'.
+	change := (CBChangeSet new addClass: cls) allRefactoringChanges last.
+	self assert: change textToDisplay = change oldVersionTextToDisplay.
+	self assert: (CBChangeSet new addClass: cls) refactoringChanges isEmpty
 ]
 
 { #category : #tests }

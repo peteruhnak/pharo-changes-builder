@@ -29,6 +29,13 @@ CBClassTest >> testAddInstanceVariable [
 ]
 
 { #category : #'tests - adding' }
+CBClassTest >> testAddMetaInstanceVariable [
+	class addMetaInstVarNamed: 'something'.
+	self assert: class metaInstanceVariables equals: #(something).
+	self assert: (class hasMetaInstVarNamed: 'something')
+]
+
+{ #category : #'tests - adding' }
 CBClassTest >> testAddMetaMethod [
 	class addMetaMethod: (CBMethod new getter: 'item').
 	self assert: class metaMethods size equals: 1.

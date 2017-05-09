@@ -14,7 +14,8 @@ Class {
 		'instanceVariables',
 		'classVariables',
 		'methods',
-		'metaMethods'
+		'metaMethods',
+		'metaInstanceVariables'
 	],
 	#category : 'ChangesBuilder-Model'
 }
@@ -36,6 +37,11 @@ CBClass >> addClassVarNamed: aString [
 { #category : #adding }
 CBClass >> addInstVarNamed: aString [
 	instanceVariables add: aString
+]
+
+{ #category : #adding }
+CBClass >> addMetaInstVarNamed: aString [
+	metaInstanceVariables add: aString
 ]
 
 { #category : #adding }
@@ -112,6 +118,11 @@ CBClass >> hasInstVarNamed: aString [
 	^ instanceVariables includes: aString
 ]
 
+{ #category : #testing }
+CBClass >> hasMetaInstVarNamed: aString [
+	^ metaInstanceVariables includes: aString
+]
+
 { #category : #initialization }
 CBClass >> initialize [
 	super initialize.
@@ -119,6 +130,7 @@ CBClass >> initialize [
 	package := 'Unclassified'.
 	instanceVariables := Set new.
 	classVariables := Set new.
+	metaInstanceVariables := Set new.
 	methods := OrderedDictionary new.
 	metaMethods := OrderedDictionary new
 ]
@@ -131,6 +143,11 @@ CBClass >> instVarNames [
 { #category : #accessing }
 CBClass >> instanceVariables [
 	^ instanceVariables asArray
+]
+
+{ #category : #accessing }
+CBClass >> metaInstanceVariables [
+	^ metaInstanceVariables asArray
 ]
 
 { #category : #accessing }
