@@ -13,7 +13,8 @@
 		"instanceVariables",
 		"classVariables",
 		"methods",
-		"metaMethods" ],
+		"metaMethods",
+		"metaInstanceVariables" ],
 	"name" : "CBClass",
 	"pools" : [
 		 ],

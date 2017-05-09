@@ -1,0 +1,3 @@
+accessing
+metaInstanceVariables
+	^ metaInstanceVariables asArray

@@ -5,5 +5,6 @@ initialize
 	package := 'Unclassified'.
 	instanceVariables := Set new.
 	classVariables := Set new.
+	metaInstanceVariables := Set new.
 	methods := OrderedDictionary new.
 	metaMethods := OrderedDictionary new
