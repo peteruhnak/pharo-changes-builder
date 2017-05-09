@@ -15,6 +15,20 @@ CBClassTest >> setUp [
 ]
 
 { #category : #'tests - adding' }
+CBClassTest >> testAddClassVariable [
+	class addClassVarNamed: 'something'.
+	self assert: class classVariables equals: #(something).
+	self assert: (class hasClassVarNamed: 'something')
+]
+
+{ #category : #'tests - adding' }
+CBClassTest >> testAddInstanceVariable [
+	class addInstVarNamed: 'something'.
+	self assert: class instanceVariables equals: #(something).
+	self assert: (class hasInstVarNamed: 'something')
+]
+
+{ #category : #'tests - adding' }
 CBClassTest >> testAddMetaMethod [
 	class addMetaMethod: (CBMethod new getter: 'item').
 	self assert: class metaMethods size equals: 1.
@@ -30,13 +44,6 @@ CBClassTest >> testAddMethod [
 	self assert: class selectors equals: #(item)
 ]
 
-{ #category : #'tests - adding' }
-CBClassTest >> testAddVariable [
-	class addInstVarNamed: 'something'.
-	self assert: class instanceVariables equals: #(something).
-	self assert: (class hasInstVarNamed: 'something')
-]
-
 { #category : #tests }
 CBClassTest >> testClassDefinition [
 	class := CBClass
@@ -47,6 +54,23 @@ CBClassTest >> testClassDefinition [
 		assert: class classDefinition
 		equals:
 			'OPCGClassTest subclass: #SomeGeneratedClassSomewhere<n><t>instanceVariableNames: ''''<n><t>classVariableNames: ''''<n><t>poolDictionaries: ''''<n><t>category: ''Somewhere'''
+				expandMacros
+]
+
+{ #category : #tests }
+CBClassTest >> testClassDefinitionWithInstanceAndClassVars [
+	class := CBClass
+		name: 'SomeGeneratedClassSomewhere'
+		parent: 'OPCGClassTest'
+		package: 'Somewhere'.
+	class addInstVarNamed: 'var1'.
+	class addInstVarNamed: 'var2'.
+	class addClassVarNamed: 'clsVar1'.
+	class addClassVarNamed: 'clsVar2'.
+	self
+		assert: class classDefinition
+		equals:
+			'OPCGClassTest subclass: #SomeGeneratedClassSomewhere<n><t>instanceVariableNames: ''var1 var2''<n><t>classVariableNames: ''clsVar1 clsVar2''<n><t>poolDictionaries: ''''<n><t>category: ''Somewhere'''
 				expandMacros
 ]
 

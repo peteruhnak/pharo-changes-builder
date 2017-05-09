@@ -12,6 +12,7 @@ Class {
 		'parent',
 		'package',
 		'instanceVariables',
+		'classVariables',
 		'methods',
 		'metaMethods'
 	],
@@ -25,6 +26,11 @@ CBClass class >> name: aString parent: aClass package: aPkgName [
 		parent: aClass;
 		package: aPkgName;
 		yourself
+]
+
+{ #category : #adding }
+CBClass >> addClassVarNamed: aString [
+	classVariables add: aString
 ]
 
 { #category : #adding }
@@ -49,11 +55,23 @@ CBClass >> classDefinition [
 	self assert: [ instanceVariables isCollection ].
 	self assert: [ instanceVariables allSatisfy: #isString ].
 	self assert: [ package isString & package isNotEmpty ].
-	^ '<1s> subclass: #<2s><n><t>instanceVariableNames: <3p><n><t>classVariableNames: ''''<n><t>poolDictionaries: ''''<n><t>category: <4p>'
-		expandMacrosWith: parent
-		with: name
-		with: (self instanceVariables joinUsing: ' ')
-		with: package
+	^ '<1s> subclass: #<2s><n><t>instanceVariableNames: <3p><n><t>classVariableNames: <4p><n><t>poolDictionaries: ''''<n><t>category: <5p>'
+		expandMacrosWithArguments:
+			{parent.
+			name.
+			self instanceVariables joinUsing: ' '.
+			self classVariables joinUsing: ' '.
+			package}
+]
+
+{ #category : #accessing }
+CBClass >> classVarNames [
+	^ self classVariables
+]
+
+{ #category : #accessing }
+CBClass >> classVariables [
+	^ classVariables asArray
 ]
 
 { #category : #accessing }
@@ -85,6 +103,11 @@ CBClass >> compileMeta: aString classified: aProtocol [
 ]
 
 { #category : #testing }
+CBClass >> hasClassVarNamed: aString [
+	^ classVariables includes: aString
+]
+
+{ #category : #testing }
 CBClass >> hasInstVarNamed: aString [
 	^ instanceVariables includes: aString
 ]
@@ -95,6 +118,7 @@ CBClass >> initialize [
 	parent := 'Object'.
 	package := 'Unclassified'.
 	instanceVariables := Set new.
+	classVariables := Set new.
 	methods := OrderedDictionary new.
 	metaMethods := OrderedDictionary new
 ]
