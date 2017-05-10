@@ -8,6 +8,14 @@ Class {
 }
 
 { #category : #tests }
+CBMethodBuilderTest >> testAddComment [
+	builder := CBMethodBuilder new.
+	builder addComment: 'hello'.
+	self assert: (builder asComment: 'text') equals: 'text'.
+	self assert: (builder asComment: 't"e"xt') equals: 't""e""xt'
+]
+
+{ #category : #tests }
 CBMethodBuilderTest >> testAddIndent [
 	builder := CBMethodBuilder new.
 	builder addLine: 'first'.
@@ -44,6 +52,24 @@ CBMethodBuilderTest >> testAddLine [
 	builder addLine: 'second'.
 	self assert: builder source equals: 'first
 second
+'
+]
+
+{ #category : #tests }
+CBMethodBuilderTest >> testAsComment [
+	builder := CBMethodBuilder new.
+	self assert: (builder asComment: 'text') equals: 'text'.
+	self assert: (builder asComment: 't"e"xt') equals: 't""e""xt'
+]
+
+{ #category : #tests }
+CBMethodBuilderTest >> testComment [
+	builder := CBMethodBuilder new.
+	builder addComment: 'first'.
+	self
+		assert: builder source
+		equals:
+			'"first"
 '
 ]
 

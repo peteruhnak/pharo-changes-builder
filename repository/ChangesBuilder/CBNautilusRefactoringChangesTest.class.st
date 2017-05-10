@@ -9,6 +9,7 @@ Class {
 
 { #category : #support }
 CBNautilusRefactoringChangesTest >> methodForTest [
+	"do not delete me, I am used in #testMethodNotChanged"
 ]
 
 { #category : #tests }
@@ -69,7 +70,8 @@ CBNautilusRefactoringChangesTest >> testExample [
 CBNautilusRefactoringChangesTest >> testMethodChanged [
 	| cls change |
 	cls := CBClass new name: self class name.
-	cls compile: 'methodForTest' classified: 'not support'.
+	cls compile: 'methodForTest
+	"do not delete me, I am used in #testMethodNotChanged"' classified: 'not support'.
 	change := (CBChangeSet new addClass: cls) allRefactoringChanges last.
 	self deny: change textToDisplay = change oldVersionTextToDisplay.
 	self assert: (CBChangeSet new addClass: cls) refactoringChanges size equals: 2
@@ -79,7 +81,8 @@ CBNautilusRefactoringChangesTest >> testMethodChanged [
 CBNautilusRefactoringChangesTest >> testMethodNotChanged [
 	| cls change |
 	cls := CBClass new name: self class name.
-	cls compile: 'methodForTest' classified: 'support'.
+	cls compile: 'methodForTest
+	"do not delete me, I am used in #testMethodNotChanged"' classified: 'support'.
 	change := (CBChangeSet new addClass: cls) allRefactoringChanges last.
 	self assert: change textToDisplay equals: change oldVersionTextToDisplay.
 	self assert: (CBChangeSet new addClass: cls) refactoringChanges size equals: 1

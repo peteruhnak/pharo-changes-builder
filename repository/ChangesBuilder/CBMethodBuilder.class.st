@@ -13,6 +13,11 @@ Class {
 	#category : 'ChangesBuilder-Model'
 }
 
+{ #category : #adding }
+CBMethodBuilder >> addComment: aString [
+	self addLine: '"' , (self asComment: aString) , '"'
+]
+
 { #category : #accessing }
 CBMethodBuilder >> addIndent [
 	indent := indent + 1
@@ -26,6 +31,12 @@ CBMethodBuilder >> addLine: aString [
 			indent timesRepeat: [ stream tab ].
 			stream << aString.
 			stream cr ]
+]
+
+{ #category : #utility }
+CBMethodBuilder >> asComment: aString [
+	"aString asComment duplicates only double quotes that are alone, which is not what I want"
+	^ aString copyReplaceAll: '"' with: '""'
 ]
 
 { #category : #initialization }
