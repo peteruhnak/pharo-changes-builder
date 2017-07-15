@@ -1,15 +1,14 @@
 {
-	"category" : "ChangesBuilder-Model",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "PeterUhnak 5/9/2017 14:16",
+	"super" : "Object",
+	"category" : "ChangesBuilder-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"source",
-		"indent" ],
+		"indent"
+	],
 	"name" : "CBMethodBuilder",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

@@ -1,14 +1,13 @@
 {
-	"category" : "ChangesBuilder-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		"method" ],
-	"name" : "CBMethodTest",
-	"pools" : [
-		 ],
 	"super" : "TestCase",
-	"type" : "normal" }
+	"category" : "ChangesBuilder-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"method"
+	],
+	"name" : "CBMethodTest",
+	"type" : "normal"
+}

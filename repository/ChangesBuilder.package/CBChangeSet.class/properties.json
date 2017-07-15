@@ -1,14 +1,13 @@
 {
-	"category" : "ChangesBuilder-Model",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "PeterUhnak 4/16/2017 00:54",
-	"instvars" : [
-		"classes" ],
-	"name" : "CBChangeSet",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "ChangesBuilder-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"classes"
+	],
+	"name" : "CBChangeSet",
+	"type" : "normal"
+}

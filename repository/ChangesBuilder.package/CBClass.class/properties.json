@@ -1,10 +1,10 @@
 {
-	"category" : "ChangesBuilder-Model",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "PeterUhnak 4/12/2017 11:02",
+	"super" : "Object",
+	"category" : "ChangesBuilder-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"name",
 		"comment",
@@ -14,9 +14,8 @@
 		"classVariables",
 		"methods",
 		"metaMethods",
-		"metaInstanceVariables" ],
+		"metaInstanceVariables"
+	],
 	"name" : "CBClass",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

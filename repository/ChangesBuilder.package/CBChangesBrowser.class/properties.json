@@ -1,14 +1,11 @@
 {
-	"category" : "ChangesBuilder-Utilities",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "PeterUhnak 4/15/2017 09:45",
-	"instvars" : [
-		 ],
-	"name" : "CBChangesBrowser",
-	"pools" : [
-		 ],
 	"super" : "ChangesBrowser",
-	"type" : "normal" }
+	"category" : "ChangesBuilder-Utilities",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CBChangesBrowser",
+	"type" : "normal"
+}

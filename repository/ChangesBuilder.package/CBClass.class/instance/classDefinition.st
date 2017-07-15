@@ -9,6 +9,6 @@ classDefinition
 		expandMacrosWithArguments:
 			{parent.
 			name.
-			self instanceVariables joinUsing: ' '.
-			self classVariables joinUsing: ' '.
+			self instanceVariables sorted joinUsing: ' '.
+			self classVariables sorted joinUsing: ' '.
 			package}
