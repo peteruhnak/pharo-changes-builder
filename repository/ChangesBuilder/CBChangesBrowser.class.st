@@ -44,6 +44,11 @@ CBChangesBrowser >> diffModel [
 ]
 
 { #category : #initialization }
+CBChangesBrowser >> initialExtent [
+	^ 800 @ 600
+]
+
+{ #category : #initialization }
 CBChangesBrowser >> initializePresenter [
 	changesTree
 		whenHighlightedItemChanged: [ :item | 
