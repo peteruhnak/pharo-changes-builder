@@ -168,6 +168,15 @@ CBClassTest >> testCreate [
 	self assert: result package equals: 'Generated'
 ]
 
+{ #category : #tests }
+CBClassTest >> testFromRealClass [
+	| realClass |
+	realClass := self class.
+	class := CBClass fromClass: realClass.
+	self assert: class instanceVariables equals: realClass instanceVariables.
+	self assert: class parent equals: realClass superclass name
+]
+
 { #category : #'tests - accessing' }
 CBClassTest >> testPackage [
 	class package: 'Wherever'.
