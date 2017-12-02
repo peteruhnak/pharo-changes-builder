@@ -1,4 +1,4 @@
-running
+tests
 testClassWithMetaMethodChanges
 	| class methodRefactoring |
 	class := CBClass new name: 'GeneratedClass'.

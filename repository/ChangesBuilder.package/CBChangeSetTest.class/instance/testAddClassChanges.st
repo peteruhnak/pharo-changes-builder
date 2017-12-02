@@ -1,4 +1,4 @@
-running
+tests
 testAddClassChanges
 	| class |
 	class := CBClass new name: 'GeneratedClass'.
