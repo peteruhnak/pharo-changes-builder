@@ -1,10 +1,6 @@
 language: smalltalk
 sudo: false
 
-smalltalk_edge:
-  source: peteruhnak/smalltalkCI
-  branch: master
-
 os:
   - linux
 
