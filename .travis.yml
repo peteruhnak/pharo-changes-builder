@@ -1,6 +1,12 @@
 language: smalltalk
 sudo: false
 
+env:
+  global:
+  - AWS_DEFAULT_REGION=eu-central-1
+  - secure: cqiFfGcgejJeRE+W0VYRpf2VVmElyQAxsjmHDIwxiOefFyNMqv23FKcVpnMUOJr0qyAa9PLsuTvguEXBMfro7pap6Mtpghg9IfEeSRBYa5q6D5xj2jHBFnIZg92EMncD/6Myu2wcNczIbZzHsARd2I90uuR4slFfmI8DnEMRDtUkpDEzoEsIPjVheIrNxvVpNxd8YQ4P9E+Zdlod2/YG7w/Vv++tZgl+wpE3QgCkQf0WlIud7/4CNsiOUXjUhkcGTuFDZMD0O4AYElHc+6Ahjicl3JxyyPVJx4laYHCC4P6DuMpkV96ngMPWpE2Qd5QiYX1X1kWFKD8GLT0acpeWGvyoCKFERVWCieDoU/MeTxveMp2WG7sucMVNKeizVZuVLjy5L3w/XDRzEYqQrVCLrxrInUtFjr3qqlzzKT7m/uORGxADvHH66z8OxClv6JFoZVcA9Q7A18Xj/sS21i4S2m4npb2eebG1BmAHeYZZdOQ8oZIeQfxq4hM5YGcTYyH4kMZ8RvyyfJ3I5dHxPfpI5sy7rorHmrIaQlERJSNvodikydg3sJOrT9YHzc0j41L/dzUUJaNHJHJleBObMVaYnqrSBzMulqUou2Fb5x2cphEEU1rSFdMHEuMFVWM+/BlnJ2ghHlEhzdaBbncKxS2dKZf/NBHR36ZVvPVoeSsbuko=
+  - secure: luSppbqtndrcbfuKcz5n5uNCv0xU14bJmE9fxvV3qmQcsGUG3NoNQ1aa6SULQk2773pZXCh2XQVWSz07NFMmK7O0x3VG/7xbsBFOOmEOe1d0+kCHPtJXoZlF4sZQsNvFCaiINFrpxJh4hXlW9ah6iZJwzuDyQCDZ4Eye5EW1uA5v5Rebwdh2LmB0guhzmBjx2x8fxfSLd5PSD4vX58omleeqnOoSQdIATXdQrzueieLyRS7DPW9a/mfxdag29evgRbDMgH0fFzLe22rxw83nFmrQnvLilIhZUtZdxBdP8xhGxzzFfAFgGEAmO1p1CNPtOH1sxkLoEcIByl3YZtdcGOVwnk3QTxX6Mx1B9PbF0nVxsWwmm4vvKVtwNDj/CGtIzM0+6epzEtC5ZXcEqvuDwKp02ZitcLJ1sJfNY58VJ1bQcVmwQyEH35BMh6jZ2KsWuE7k6RecjQqJyJ0PDq3P/zdMv4zLO5OGuBbOKPPaJk3wYuJPwAUVksy4et6h+cZuvpI2TCusZQ2YL77LFPh7CcimdLe8avwa96mI5Yv1b/SNcsy7gJ6A8vsWbFlY4NaC9lgCyTMqrVf1ElLYLf7B5PpM98CU1SEAdXsQ6yTR0WrBhZN0D68EI5DBTuDkXL4fCqOPw5MKQK3iUhKIsEWmbaxs8LwBVkjxJa3JbwGAZSI=
+
 smalltalk_edge:
   source: gcotelli/smalltalkCI
   branch: dev
@@ -11,3 +17,10 @@ os:
 smalltalk:
   - Pharo-6.1
   - Pharo-7.0
+
+before_install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+
+after_success:
+  - aws s3 cp "${SMALLTALK_CI_BUILD}/coveralls_results.json" s3://coverage.pharo-projects/$TRAVIS_REPO_SLUG/$TRAVIS_BUILD_NUMBER/coveralls_results.json
