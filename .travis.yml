@@ -1,9 +1,12 @@
 language: smalltalk
 sudo: false
 
+smalltalk_edge:
+  source: gcotelli/smalltalkCI
+  branch: dev
+
 os:
   - linux
-  - osx
 
 smalltalk:
   - Pharo-6.1
