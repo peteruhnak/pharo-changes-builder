@@ -9,7 +9,7 @@ env:
 
 smalltalk_edge:
   source: gcotelli/smalltalkCI
-  branch: dev
+  branch: master
 
 os:
   - linux
