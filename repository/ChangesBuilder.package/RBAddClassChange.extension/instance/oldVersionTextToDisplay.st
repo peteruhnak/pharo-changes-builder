@@ -6,4 +6,4 @@ oldVersionTextToDisplay
 		expandMacrosWith: (Smalltalk classNamed: className) superclass name
 		with: className
 		with: ((Smalltalk classNamed: className) instVarNames sorted joinUsing: ' ')
-		with: category asString
+		with: (Smalltalk classNamed: className) category asString
