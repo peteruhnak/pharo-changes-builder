@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "ChangesBuilder-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"selector",
+		"arguments",
+		"comments",
+		"pragmas"
+	],
+	"name" : "CBMethodBuilder2",
+	"type" : "normal"
+}
