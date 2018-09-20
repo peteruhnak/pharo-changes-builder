@@ -1,1 +1,0 @@
-I hold references to refactored classes, and I convert everything to refactoring changes and filter them.

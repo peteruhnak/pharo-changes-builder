@@ -1,3 +1,0 @@
-accessing
-classVarNames
-	^ self classVariables

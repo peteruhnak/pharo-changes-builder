@@ -1,3 +1,0 @@
-strategies
-templateStrategy: aTemplateContextBlock
-	templateStrategory := aTemplateContextBlock

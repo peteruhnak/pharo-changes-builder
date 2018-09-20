@@ -1,1 +1,0 @@
-I am a method builder that stores the source as a template and then performs a replacement based on the selected strategy.
