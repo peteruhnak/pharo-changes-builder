@@ -1,3 +1,0 @@
-*ChangesBuilder
-textToDisplay
-	^ self comment

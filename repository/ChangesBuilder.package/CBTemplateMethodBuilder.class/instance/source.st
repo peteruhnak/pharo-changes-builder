@@ -1,3 +1,0 @@
-building
-source
-	^ self sourceOn: {}

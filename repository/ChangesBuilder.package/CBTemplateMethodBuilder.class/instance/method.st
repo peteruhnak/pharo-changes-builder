@@ -1,3 +1,0 @@
-building
-method
-	^ self methodOn: {}

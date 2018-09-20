@@ -1,3 +1,0 @@
-initialization
-errorCode
-	^ code
